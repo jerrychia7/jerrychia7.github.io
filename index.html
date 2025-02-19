@@ -6,13 +6,19 @@
   <body>
     <script>
       function rtfp() {
-        window.location.replace("https://play.google.com/store/apps/details?id=com.moloco.peeker");
+        window.location.replace("{{ .redirection_url }}");
       }
+      Promise.all(
+        Array.from(document.querySelectorAll(".cm")).filter(img => !img.complete).map(img => new Promise(resolve => {
+          img.onload = img.onerror = resolve;
+        }))).then(() => {
+        console.log("all cm pixel loaded");
+      });
       setTimeout(rtfp, 5000);
     </script>
-    <img id="cm1" src="https://pixel.rubiconproject.com/tap.php?nid=4840&v=369052&put=">
-    <img id="cm2" src="https://dsum-sec.casalemedia.com/rum?cm_dsp_id=19&external_user_id=">
-    <img id="cm3" src="https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=">
+    <img class="cm" src="https://pixel.rubiconproject.com/tap.php?nid=4840&v=369052&put=">
+    <img class="cm" src="https://dsum-sec.casalemedia.com/rum?cm_dsp_id=19&external_user_id=">
+    <img class="cm" src="https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=">
     <img src="https://cdn.prod.website-files.com/6237fca0466ffd9274a1dbdd/6544ad7675a308ab53b4c354_Moloco_logo_Horiz_Primary%201.webp">
   </body>
 </html>
