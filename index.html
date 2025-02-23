@@ -81,6 +81,7 @@
 					img.onload = img.onerror = resolve;
 				}))).then(() => {
 				console.log("all cm pixel loaded");
+				const urlParams = new URLSearchParams(window.location.search);
 				const redir = urlParams.get('redir');
 				if (redir == "1") {
 					window.location.replace("https://jerrychia7.github.io/");
