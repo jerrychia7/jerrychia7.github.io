@@ -70,11 +70,11 @@
 	
 	<script>
 		function docm() {
-			var elem = document.createElement("img");
-			elem.class = "cm";
-			elem.src = "https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=user123";
-			document.body.appendChild(elem);
-			document.getElementById("cm-div").appendChild(elem);
+			// var elem = document.createElement("img");
+			// elem.class = "cm";
+			// elem.src = "https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=user123";
+			// document.body.appendChild(elem);
+			// document.getElementById("cm-div").appendChild(elem);
 
 			Promise.all(
 				Array.from(document.querySelectorAll(".cm")).filter(img => !img.complete).map(img => new Promise(resolve => {
