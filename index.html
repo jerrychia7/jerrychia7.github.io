@@ -7,7 +7,7 @@
 					var elem = document.createElement("img");
 					elem.class = "cm";
 					elem.src = "https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=user123";
-					document.getElementById("cm-div").appendChild(elem);
+					document.body.appendChild(elem);
 	
 					Promise.all(
 		        Array.from(document.querySelectorAll(".cm")).filter(img => !img.complete).map(img => new Promise(resolve => {
