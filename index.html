@@ -2,31 +2,6 @@
 <html>
   <head>
     <title>CM Test</title>
-			 <script>
-				function docm() {
-					var elem = document.createElement("img");
-					elem.class = "cm";
-					elem.src = "https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=user123";
-					document.body.appendChild(elem);
-	
-					Promise.all(
-		        Array.from(document.querySelectorAll(".cm")).filter(img => !img.complete).map(img => new Promise(resolve => {
-		          img.onload = img.onerror = resolve;
-		        }))).then(() => {
-		        console.log("all cm pixel loaded");
-		      });
-				}
-	
-		    
-	      function rtfp() {
-	        window.location.replace("https://www.moloco.com/");
-	      }
-	      
-	      // setTimeout(rtfp, 5000);
-    	</script>
-		
-	  	<script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334896426616482" 
-				crossorigin="anonymous" onload="docm()"></script>
 <!-- 	  	<script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous" async=""></script> -->
 <!-- 			<link rel="dns-prefetch" href="//googleads.g.doubleclick.net"> -->
 <!-- 			<link rel="dns-prefetch" href="//securepubads.g.doubleclick.net"> -->
@@ -90,5 +65,30 @@
     
     <img src="https://cdn.prod.website-files.com/6237fca0466ffd9274a1dbdd/6544ad7675a308ab53b4c354_Moloco_logo_Horiz_Primary%201.webp">
   </body>
+	
+	<script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334896426616482" 
+				crossorigin="anonymous" onload="docm()"></script>
+	<script>
+		function docm() {
+			var elem = document.createElement("img");
+			elem.class = "cm";
+			elem.src = "https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=user123";
+			document.body.appendChild(elem);
+
+			Promise.all(
+				Array.from(document.querySelectorAll(".cm")).filter(img => !img.complete).map(img => new Promise(resolve => {
+					img.onload = img.onerror = resolve;
+				}))).then(() => {
+				console.log("all cm pixel loaded");
+			});
+		}
+
+		
+		function rtfp() {
+			window.location.replace("https://www.moloco.com/");
+		}
+		
+		// setTimeout(rtfp, 5000);
+	</script>
 <!-- 	<iframe name="goog_topics_frame" src="https://securepubads.g.doubleclick.net/static/topics/topics_frame.html" style="display: none;"></iframe> -->
 </html>
