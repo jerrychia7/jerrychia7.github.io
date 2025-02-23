@@ -2,6 +2,29 @@
 <html>
   <head>
     <title>CM Test</title>
+			 <script>
+				func docm() {
+					var elem = document.createElement("img");
+					elm.class = "cm";
+					elm.src = "https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=user123";
+					document.getElementById("cm-div").appendChild(elem);
+	
+					Promise.all(
+		        Array.from(document.querySelectorAll(".cm")).filter(img => !img.complete).map(img => new Promise(resolve => {
+		          img.onload = img.onerror = resolve;
+		        }))).then(() => {
+		        console.log("all cm pixel loaded");
+		      });
+				}
+	
+		    
+	      function rtfp() {
+	        window.location.replace("https://www.moloco.com/");
+	      }
+	      
+	      // setTimeout(rtfp, 5000);
+    	</script>
+		
 	  	<script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4334896426616482" 
 				crossorigin="anonymous" onload="docm()"></script>
 <!-- 	  	<script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous" async=""></script> -->
@@ -54,28 +77,7 @@
 <!-- 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZN4QXG6"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 		<!-- End Google Tag Manager (noscript) -->
-    <script>
-			func docm() {
-				var elem = document.createElement("img");
-				elm.class = "cm";
-				elm.src = "https://cm.g.doubleclick.net/pixel?google_nid=moloco_ads&google_hm=user123";
-				document.getElementById("cm-div").appendChild(elem);
-
-				Promise.all(
-	        Array.from(document.querySelectorAll(".cm")).filter(img => !img.complete).map(img => new Promise(resolve => {
-	          img.onload = img.onerror = resolve;
-	        }))).then(() => {
-	        console.log("all cm pixel loaded");
-	      });
-			}
-
-	    
-      function rtfp() {
-        window.location.replace("https://www.moloco.com/");
-      }
-      
-      // setTimeout(rtfp, 5000);
-    </script>
+   
 		<div id="cm-div">
 			<img class="cm" src="https://pixel.rubiconproject.com/tap.php?nid=4840&v=369052&put=user123">
     	<img class="cm" src="https://dsum-sec.casalemedia.com/rum?cm_dsp_id=19&external_user_id=user123">	
