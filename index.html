@@ -116,7 +116,6 @@ function myFunction5() {
     if (detect_inapp()) {
         p.textContent = 'detected in-app browser';
     } else {
-    	const p = document.createElement("p");
         p.textContent = 'detected native browser';
     }
     p.textContent += ' width: ' + window.innerWidth + ' height: ' + window.innerHeight
