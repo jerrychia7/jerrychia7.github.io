@@ -118,8 +118,9 @@ function myFunction5() {
     } else {
         p.textContent = 'detected native browser';
     }
-    p.textContent += ' width: ' + window.innerWidth + ' height: ' + window.innerHeight
-    p.textContent += ' swidth: ' + screen.width + ' sheight: ' + screen.height
+    p.textContent += '\n inner width: ' + window.innerWidth + ' inner height: ' + window.innerHeight
+    p.textContent += '\n client width: ' + window.clientWidth + ' client height: ' + window.clientHeight
+    p.textContent += '\n screen width: ' + screen.width + ' screen height: ' + screen.height
     document.body.appendChild(p);
 }
 
