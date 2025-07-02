@@ -112,15 +112,16 @@ function detect_inapp() {
     }
 
 function myFunction5() {
+    const p = document.createElement("p");
     if (detect_inapp()) {
-    	const p = document.createElement("p");
         p.textContent = 'detected in-app browser';
-        document.body.appendChild(p);
     } else {
     	const p = document.createElement("p");
         p.textContent = 'detected native browser';
-        document.body.appendChild(p);
     }
+    p.textContent += ' width: ' + window.innerWidth + ' height: ' + window.innerHeight
+    p.textContent += ' swidth: ' + screen.width + ' sheight: ' + screen.height
+    document.body.appendChild(p);
 }
 
 </script>
