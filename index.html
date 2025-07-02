@@ -1,17 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cookie Matching Test</title>
-</head>
-  </head>
-  <body>
-<!--     <img class="cm" src="https://tr-us.adsmoloco.com/cminit?mlc_cm"> -->
-    <img src="https://cdn.prod.website-files.com/6237fca0466ffd9274a1dbdd/6544ad7675a308ab53b4c354_Moloco_logo_Horiz_Primary%201.webp">
-  </body>
-  <script>
-    var iframe = document.createElement('iframe');
-    iframe.setAttribute('style', 'position: absolute; width:0; height:0; border:0;');
-    iframe.setAttribute('src', 'https://tr-us.adsmoloco.com/cminit?mlc_cm');
-    // document.body.appendChild(iframe);
-  </script>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The open() Method</h2>
+
+
+<a href="https://moloco.com" target="_system">Link 1</a>
+
+<p>Click the button to open a new browser window.</p>
+
+<button onclick="myFunction()">Open Window</button>
+
+<button onclick="myFunction2()">Check UA</button>
+
+<button onclick="myFunction3()">Check Screen</button>
+
+<script>
+function myFunction() {
+  window.open('https://moloco.com', '_system', 'location=yes')
+}
+
+const BROWSER = {
+  messenger: /\bFB[\w_]+\/(Messenger|MESSENGER)/,
+  facebook: /\bFB[\w_]+\//,
+  twitter: /\bTwitter/i,
+  line: /\bLine\//i,
+  wechat: /\bMicroMessenger\//i,
+  puffin: /\bPuffin/i,
+  miui: /\bMiuiBrowser\//i,
+  instagram: /\bInstagram/i,
+  chrome: /\bCrMo\b|CriOS|Android.*Chrome\/[.0-9]* (Mobile)?/,
+  safari: /Version.*Mobile.*Safari|Safari.*Mobile|MobileSafari/,
+  ie: /IEMobile|MSIEMobile/,
+  firefox: /fennec|firefox.*maemo|(Mobile|Tablet).*Firefox|Firefox.*Mobile|FxiOS/,
+};
+
+
+const rules = [
+      'WebView',
+      '(iPhone|iPod|iPad)(?!.*Safari\/)',
+      'Android.*(wv)',
+    ];
+const regex = new RegExp('WebView|(iPhone|iPod|iPad)(?!.*Safari\/)|Android.*(wv)', 'ig');
+
+function myFunction2() {
+	if (navigator.userAgent.match(regex)) {
+    	const p = document.createElement("p");
+        p.textContent = 'UA is in-app browser';
+        document.body.appendChild(p);
+    } else {
+    	const p = document.createElement("p");
+        p.textContent = 'UA is native browser';
+        document.body.appendChild(p);
+    }
+}
+
+const hasValidDocumentElementRatio =
+  [ 320 / 454 // 5, SE
+  , 375 / 553 // 6, 7, 8
+  , 414 / 622 // 6, 7, 8 Plus
+  , 375 / 812 // X
+  , 414 / 896 // Xs, Xr
+  ].some(ratio =>
+    ratio === document.documentElement.clientWidth / 
+      document.documentElement.clientHeight
+  )
+
+const hasSafariInUA = /Safari/.test(navigator.userAgent)
+
+const isiOSSafari = hasSafariInUA && hasValidDocumentElementRatio 
+
+function myFunction3() {
+	if (isiOSSafari) {
+    	const p = document.createElement("p");
+        p.textContent = 'isiOSSafari native';
+        document.body.appendChild(p);
+    } else {
+    	const p = document.createElement("p");
+        p.textContent = 'isiOSSafari in-app browser';
+        document.body.appendChild(p);
+    }
+}
+
+</script>
+
+
+
+</body>
 </html>
+
