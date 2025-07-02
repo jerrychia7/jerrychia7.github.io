@@ -74,13 +74,21 @@ const isiOSSafari = hasSafariInUA && hasValidDocumentElementRatio
 function myFunction3() {
 	if (isiOSSafari) {
     	const p = document.createElement("p");
-        p.textContent = 'isiOSSafari native';
+        p.textContent = 'documentElement native browser';
         document.body.appendChild(p);
     } else {
     	const p = document.createElement("p");
-        p.textContent = 'isiOSSafari in-app browser';
+        p.textContent = 'documentElement in-app browser';
         document.body.appendChild(p);
     }
+}
+
+var _lsTotal=0,_xLen,_x;for(_x in localStorage){ if(!localStorage.hasOwnProperty(_x)){continue;} _xLen= ((localStorage[_x].length + _x.length)* 2);_lsTotal+=_xLen; console.log(_x.substr(0,50)+" = "+ (_xLen/1024).toFixed(2)+" KB")};console.log("Total = " + (_lsTotal / 1024).toFixed(2) + " KB");
+
+function myFunction4() {
+	const p = document.createElement("p");
+	p.textContent = "Total = " + (_lsTotal / 1024).toFixed(2) + " KB";
+	document.body.appendChild(p);
 }
 
 </script>
